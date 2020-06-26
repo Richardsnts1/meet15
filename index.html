@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Desafio para quinta</title>
+  </head>
+  <body>
+    <div id="container">
+      <button onclick="criarQuadrado()">
+        Clique Aqui para criar um Quadrado
+      </button>
+    </div>
+    <div id="quadrado"></div>
+    <script>
+      function criarQuadrado() {
+        let boxElement = document.createElement("quadrado");
+        boxElement.style.margin = "5px";
+        boxElement.style.width = "100px";
+        boxElement.style.height = "100px";
+        boxElement.style.display = "inline-block";
+        boxElement.style.backgroundColor = "#FF0000";
+        boxElement.addEventListener("mouseover", function () {
+          let letters = "0123456789ABCDEF";
+          let color = "#";
+          for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+          }
+          return (this.style.background = color);
+        });
+
+        let quadrado = document.getElementById("quadrado");
+        quadrado.appendChild(boxElement);
+      }
+    </script>
+  </body>
+</html>
